@@ -1,1 +1,4 @@
-useres/__pycache__/*
+users/__pycache__/*
+secret.json
+users/settings/__pycache__/*
+db.sqlite3

@@ -1,0 +1,3 @@
+******para instalar paquetes desde un txt****
+pip install local.txt
+
