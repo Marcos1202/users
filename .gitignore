@@ -1,4 +1,12 @@
-users/__pycache__/*
 secret.json
-users/settings/__pycache__/*
 db.sqlite3
+
+applications/home/migrations/*
+applications/users/migrations/*
+
+__pycache__/*
+applications/__pycache__/*
+users/__pycache__/*
+users/settings/__pycache__/*
+applications/home/__pycache__/*
+applications/users/__pycache__/*

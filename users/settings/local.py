@@ -27,3 +27,15 @@ STATIC_DIRS = [BASE_DIR.child('static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
+
+#email
+#activar envios de mails
+EMAIL_USE_TLS = True
+#Tipo de correo
+EMAIL_HOST = 'smtp.gmail.com'
+#correo de backend
+EMAIL_HOST_USER = get_secret("E-MAIL")
+#password
+EMAIL_HOST_PASSWORD = get_secret("E-MAIL_PASS")
+#puerto
+EMAIL_PORT = 587

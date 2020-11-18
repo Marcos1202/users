@@ -1,6 +1,5 @@
 #Para los archivos secretos
-from django.core.exceptions import ImproperlyConfigured
-import json
+from secret import get_secret
 
 
 
@@ -25,15 +24,8 @@ BASE_DIR = Path(__file__).ancestor(3)
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open("secret.json") as f:
-    secret=json.loads(f.read())
 
-def get_secret(secret_name, secrets=secret):
-    try:
-        return secrets[secret_name]
-    except:
-        msg = "la variable %s no esiste" %secret_name
-        raise ImproperlyConfigured(msg)
+
 
 
 SECRET_KEY = get_secret('SECRET_KEY')
@@ -41,18 +33,21 @@ SECRET_KEY = get_secret('SECRET_KEY')
 
 # Application definition
 
-DJANGO_APPS = [
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+)
 
-LOCAL_APPS = []
+LOCAL_APPS = (
+    #'home',
+    'applications.users',
+)
 
-THRD_PARTY_APPS = []
+THRD_PARTY_APPS = ()
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THRD_PARTY_APPS
 
@@ -106,7 +101,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+#trabajar bajo otro modelo de usuario
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

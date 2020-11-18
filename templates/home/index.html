@@ -1,0 +1,10 @@
+<h1>Panel de usuario</h1>
+<!-- la variable user, es de contexto
+lo que significa que estara activa en todo el proyecto
+y se crea al momento de hacer un login -->
+<h3>Bienvenido {{user}}</h3>
+<ul>
+    <li><a href="{% url 'users_app:user_logout' %}">Cerrar Secion</a></li>
+    <li><a href="{% url 'users_app:update_pass' %}">Actualizar datos</a></li>
+
+</ul>

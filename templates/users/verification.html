@@ -1,0 +1,6 @@
+<h1>Verivicaci&oacute;n de Correo</h1>
+<h2>Ingresa tu codigo</h2>
+<form action="" method="post">{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Enviar</button>
+</form>
